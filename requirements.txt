@@ -6,3 +6,4 @@ dnspython
 dismusic
 youtube_dl
 requests
+json
