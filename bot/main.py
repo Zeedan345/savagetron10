@@ -5,7 +5,7 @@ import os
 import server
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix="-")
+client = commands.Bot(command_prefix='-', intents= discord.Intents.all())
 TOKEN = os.getenv("DISCORD_TOKEN")
 cogs = ['Basic','music']
 client.lava_nodes = [
@@ -19,7 +19,7 @@ client.lava_nodes = [
   }
 ]
 
-@bot.event
+@client.event
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
     client.load_extension('dismusic')
@@ -32,9 +32,9 @@ async def on_ready():
         except Exception as e:
             print(e) 
 
-@bot.command()
+@client.command()
 async def ping(ctx):
     await ctx.send("pong")
 
 server.server()
-bot.run(TOKEN)
+client.run(TOKEN)
