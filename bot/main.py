@@ -4,8 +4,9 @@ import os
 #import dnspython
 import server
 from discord.ext import commands
-
-client = commands.Bot(command_prefix='-', intents= discord.Intents.all())
+intents = discord.Intents.default()
+intents.members = True
+client = commands.Bot(command_prefix='-', intents= intents)
 TOKEN = os.getenv("DISCORD_TOKEN")
 cogs = ['Basic','music']
 client.lava_nodes = [
