@@ -4,3 +4,5 @@ python-dotenv
 PyNaCl
 dnspython
 dismusic
+youtube_dl
+requests
