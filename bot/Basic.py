@@ -69,7 +69,61 @@ class Basic_(commands.Cog):
    f.set_image(url= ses['image'])
    f.set_footer(text=f'👍:{sups} 👎:{sdowns}')
    await ctx.send(embed=f)
-
+  @commands.group(invoke_without_command=True )
+  async def help(self,ctx):
+    hm= discord.Embed(title='Help', description = 'For details of a specific feature type help<command>')
+    hm.add_field(name='Basic',value='Hello,Roast')
+    hm.add_field(name='memes',value='memes,shitpost,retardmemes')
+    hm.add_field(name='music',value = 'con,play,disconnect,equilizer,volume,pause,resume')
+    await ctx.send(embed=hm)
+  @help.command()
+  async def Hello(ctx):
+    hm= discord.Embed(title='Hello')
+    hm.add_field(name='**Syntax**', value = '-hello')
+  @help.command()
+  async def Roast(ctx):
+    hm= discord.Embed(title='roast', description='Roasts A person Savagly')
+    hm.add_field(name='**Syntax**', value = '-hello @<username>')
+  @help.command()
+  async def Con(ctx):
+    hm= discord.Embed(title='connect', description='Connects to a Voice channel')
+    hm.add_field(name='**Syntax**', value = '-con Make sure you are in a voice channel')
+  @help.command()
+  async def Play(ctx):
+    hm= discord.Embed(title='play',description='Plays a song')
+    hm.add_field(name='**Syntax**', value = '-play <song name>')
+  @help.command()
+  async def Disconnect(ctx):
+    hm= discord.Embed(title='disconnect',description='Disconnects the bot from a voice channel')
+    hm.add_field(name='**Syntax**', value = '-disconnect')
+  @help.command()
+  async def Equilizer(ctx):
+    hm= discord.Embed(title='equilizers',description='Control the Bass and other things of music')
+    hm.add_field(name='**Syntax**', value = '-eq')
+  @help.command()
+  async def Volume(ctx):
+    hm= discord.Embed(title='volume',description='Controls the volume of the song')
+    hm.add_field(name='**Syntax**', value = '-volume <value>')
+  @help.command()
+  async def Pause(ctx):
+    hm= discord.Embed(title='pause',description='Pause the song currently playing')
+    hm.add_field(name='**Syntax**', value = '-pause')
+  @help.command()
+  async def Resume(ctx):
+    hm= discord.Embed(title='resume',description='Resumes the song that was paused')
+    hm.add_field(name='**Syntax**', value = '-disconnect')
+  @help.command()
+  async def Memes(ctx):
+    hm= discord.Embed(title='memes',description='Shows Random memes from r/memes')
+    hm.add_field(name='**Syntax**', value = '-memes')
+  @help.command()
+  async def Shitpost(ctx):
+    hm= discord.Embed(title='shitpost',description='Shows Random memes from r/shitpost')
+    hm.add_field(name='**Syntax**', value = '-sitpost')  
+  @help.command()
+  async def Retardmemes(ctx):
+    hm= discord.Embed(title='reatradmemes',description='Shows Random memes from r/reatrdmemes')
+    hm.add_field(name='**Syntax**', value = '-retardmemes')
 
 def setup(client):
   client.add_cog(Basic_(client))
