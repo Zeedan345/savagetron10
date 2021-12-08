@@ -8,6 +8,7 @@ intents = discord.Intents.default()
 intents.members = True
 client = commands.Bot(command_prefix='-', intents= intents)
 TOKEN = os.getenv("DISCORD_TOKEN")
+client.remove_command('help')
 cogs = ['Basic','music']
 client.lava_nodes = [
   {
