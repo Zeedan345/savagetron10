@@ -9,7 +9,7 @@ intents.members = True
 client = commands.Bot(command_prefix='-', intents= intents)
 TOKEN = os.getenv("DISCORD_TOKEN")
 client.remove_command('help')
-cogs = ['Basic','music']
+cogs = ['Basic','music','help']
 client.lava_nodes = [
   {
     'host': 'lava.link',
