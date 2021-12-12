@@ -4,7 +4,6 @@ import random
 import time
 import requests
 import json
-from replit import db
 from discord.ext import commands
 
 
